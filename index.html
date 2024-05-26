@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f9f9f9;
+        }
+        .banner-container {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .banner {
+            width: 100%;
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .banner img {
+            width: 100%;
+            object-fit: cover;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1;
+        }
+        .prev {
+            left: 0;
+        }
+        .next {
+            right: 0;
+        }
+        .mission-vision {
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .section {
+            width: 45%;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+        }
+        .circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .about-me {
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+        .about-me h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .about-me p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+        .social-links img {
+            width: 40px;
+            height: 40px;
+            filter: invert(100%);
+        }
+    </style>
+</head>
+<body>
+
+<div class="banner-container">
+    <div class="banner">
+        <img src="C:\Users\sebas\Desktop\imgenes pagina\1.jpg" alt=""C:\Users\sebas\Desktop\imgenes pagina\1>
+        <img src="C:\Users\sebas\Desktop\imgenes pagina\2.jpg" alt="C:\Users\sebas\Desktop\imgenes pagina\2">
+        <img src="C:\Users\sebas\Desktop\imgenes pagina\5.jpg" alt="C:\Users\sebas\Desktop\imgenes pagina\5">
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.querySelectorAll('.banner img');
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        slides.forEach((slide, index) => {
+            slide.style.display = (index + 1 === slideIndex) ? "block" : "none";
+        });
+    }
+</script>
+
+<div class="mission-vision">
+    <div class="section">
+        <h2>Visión</h2>
+        <p>Se enfoca en encontrar un equilibrio armonioso y crecer en las diversas áreas de mi vida. Valoro profundamente la relación amorosa y estable que tengo con mi pareja. La comunicación abierta, el apoyo mutuo y el respeto son los pilares de nuestra relación. Juntos.
+
+            </p>
+        <div class="circle">
+            <img src="C:\Users\sebas\Desktop\imgenes pagina\3.jpg" alt="C:\Users\sebas\Desktop\imgenes pagina\3">
+        </div>
+    </div>
+    <div class="section">
+        <h2>Misión</h2>
+        <!-- Reemplaza el contenido con tu descripción de la misión -->
+        <p>Vivir una vida equilibrada y dedicando tiempo y esfuerzo a mi desarrollo personal y a las relaciones que valoro, especialmente con mi pareja. Aspiro a construir una vida honrrada, el respeto y el apoyo mutuo, creando un entorno en el que ambos podamos prosperar.
+
+            </p>
+        <div class="circle">
+            <img src="C:\Users\sebas\Desktop\imgenes pagina\4.jpg" alt="C:\Users\sebas\Desktop\imgenes pagina\4">
+        </div>
+    </div>
+</div>
+
+<div class="about-me">
+    <h2>Sobre Mí</h2>
+    <p>Soy un entusiasta de la música y un apasionado del mundo de la tecnología. En mi tiempo libre, disfruto explorando nuevos géneros musicales y asistiendo a conciertos. Además, me encanta estar al tanto de las últimas novedades tecnológicas y experimentar con nuevas herramientas y dispositivos.</p>
+</div>
+
+<div class="footer">
+    <div class="social-links">
+        <a href="https://www.instagram.com" target="_blank"><img src="instagram.png" alt="Instagram"></a>
+        <a href="https://www.facebook.com" target="_blank"><img src="facebook.png" alt="Facebook"></a>
+        <a href="https://wa.me/1234567890" target="_blank"><img src="whatsapp.png" alt="WhatsApp"></a>
+    </div>
+</div>
+
+</body>
+</html>
